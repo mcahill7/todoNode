@@ -10,5 +10,5 @@ aws ecs register-task-definition --family $TASK_FAMILY --cli-input-json "$(echo 
 aws ecs update-service --service $SERVICE_NAME --desired-count 0 --cluster $CLUSTER_NAME
 aws ecs delete-service --service $SERVICE_NAME --cluster $CLUSTER_NAME
 sleep 45 
-aws ecs create-service --service $SERVICE_NAME --task-definition $NEW_TASK_DEF --cluster $CLUSTER_NAME --desired-count 2
+aws ecs create-service --service $SERVICE_NAME --task-definition $FINAL_TASK --cluster $CLUSTER_NAME --desired-count 2
 #aws ecs update-service --service $SERVICE_NAME --task-definition $TASK_FAMILY --cluster $CLUSTER_NAME --desired-count 2
